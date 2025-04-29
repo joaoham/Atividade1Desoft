@@ -6,3 +6,14 @@ def rolar_dados (n):
         dados.append(numero)
     
     return dados
+
+def guardar_dado (sorteados, armazenados, numero):
+    resultado = []
+    armazenados.append(sorteados[numero])
+    for i in range(len(sorteados)):
+        if sorteados[i] == numero:
+            sorteados.pop(i)
+    
+    resultado.append(sorteados,armazenados)
+
+
