@@ -41,8 +41,10 @@ def calcula_pontos_regra_simples(faces):
         while e < len(faces):
             if i == faces[e]:
                 quant += 1
+            e += 1
         if quant == 0:
             dic[i]=i
         else:
             dic[i] = (i*quant)
+        i += 1
     return {quant}
