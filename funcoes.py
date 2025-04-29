@@ -43,3 +43,10 @@ def calcula_pontos_regra_simples(dados):
             dic[valor] += valor  
 
     return dic
+
+
+def calcula_pontos_soma (lista):
+    soma = 0
+    for i in range (len(lista)):
+        soma+=lista[i]
+    return soma
