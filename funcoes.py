@@ -7,18 +7,17 @@ def rolar_dados (n):
     
     return dados
 
-def guardar_dado (sorteados, armazenados, numero):
+def guardar_dado(sorteados, armazenados, numero):
     resultado = []
     sorteados_mantidos = []
-    
+
     valor = sorteados[numero]  
-    armazenados.append(valor)
+    armazenados.append(valor)  
     
     for i in range(len(sorteados)):
-        if sorteados[i] != valor:
+        if sorteados[i] != valor:  
             sorteados_mantidos.append(sorteados[i])
-    
+
     resultado.append(sorteados_mantidos)
     resultado.append(armazenados)
     return resultado
-
