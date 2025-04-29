@@ -10,9 +10,12 @@ def rolar_dados (n):
 def guardar_dado (sorteados, armazenados, numero):
     resultado = []
     sorteados_mantidos = []
-    armazenados.append(sorteados[numero])
+    
+    valor = sorteados[numero]  
+    armazenados.append(valor)
+    
     for i in range(len(sorteados)):
-        if sorteados[i] != sorteados[numero]:
+        if sorteados[i] != valor:
             sorteados_mantidos.append(sorteados[i])
     
     resultado.append(sorteados_mantidos)
