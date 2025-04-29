@@ -17,7 +17,10 @@ def guardar_dado(sorteados, armazenados, numero):
     for i in range(len(sorteados)):
         if sorteados[i] != valor:  
             sorteados_mantidos.append(sorteados[i])
-
+        else:
+            armazenados.append(sorteados[i])
+    
     resultado.append(sorteados_mantidos)
     resultado.append(armazenados)
     return resultado
+
