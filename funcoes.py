@@ -14,6 +14,7 @@ def guardar_dado (sorteados, armazenados, numero):
         if sorteados[i] == numero:
             sorteados.pop(i)
     
-    resultado.append(sorteados,armazenados)
-
+    resultado.append(sorteados)
+    resultado.append(armazenados)
+    return resultado
 
