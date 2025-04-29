@@ -47,4 +47,4 @@ def calcula_pontos_regra_simples(faces):
         else:
             dic[i] = (i*quant)
         i += 1
-    return {quant}
+    return {dic}
