@@ -21,3 +21,14 @@ def guardar_dado(sorteados, armazenados, numero):
     resultado.append(sorteados_mantidos)
     resultado.append(armazenados)
     return resultado
+
+def remover_dado(rolados,estoque,indiceremover):
+    valor = estoque[indiceremover]
+    rolados.append(valor)
+    estoque.pop(indiceremover)
+    fim_jogada = []
+    fim_jogada.append(rolados)
+    fim_jogada.append(estoque)
+    return fim_jogada
+    
+    
