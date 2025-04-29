@@ -30,5 +30,19 @@ def remover_dado(rolados,estoque,indiceremover):
     fim_jogada.append(rolados)
     fim_jogada.append(estoque)
     return fim_jogada
-    
-    
+
+def calcula_pontos_regra_simples(faces):
+    numero = 0
+    dic = {}
+    i = 0
+    while i < 7:
+        quant = 0
+        e = 0
+        while e < len(faces):
+            if i == faces[e]:
+                quant += 1
+        if quant == 0:
+            dic[i]=i
+        else:
+            dic[i] = (i*quant)
+    return {quant}
