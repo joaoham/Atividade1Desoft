@@ -120,4 +120,15 @@ def calcula_pontos_regra_avancada(dados):
     for i in range (len(regrasavancadas)):
         dicionario[regrasavancadas[i]] = resultados[i]
     return dicionario
-#kikku acabei de gabaritar de first esse de cima ai, pica demais
+#kikku acabei de gabaritar de first esse de cima ai
+def faz_jogada(dados, categoria, dicionario):
+    novovalor = 0
+    categoriasavancadas = {"cinco_iguais": calcula_pontos_quina, "full_house": calcula_pontos_full_house, "quadra": calcula_pontos_quadra, "sem_combinacao": calcula_pontos_soma, "sequencia_alta": calcula_pontos_sequencia_alta, "sequencia_baixa": calcula_pontos_sequencia_baixa}
+    if categoria in categoriasavancadas:
+        novovalor = categoriasavancadas[categoria](dados)
+        dicionario["regra_avancada"][categoria] = novovalor
+    else: 
+        novovalor = calcula_pontos_regra_simples(dados)
+        pontuacaosimples = novovalor[int(categoria)]
+        dicionario["regra_simples"][int(categoria)] = pontuacaosimples
+    return dicionario
