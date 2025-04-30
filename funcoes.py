@@ -68,3 +68,56 @@ def calcula_pontos_sequencia_alta (lista):
         return 30
     else:
         return 0
+def calcula_pontos_full_house(dados):
+    checados =[]
+    cont = []
+    soma = 0
+    for valor in dados:
+        if valor not in checados:
+            checados.append(valor)
+            repetidos = 0
+            for numero in dados:
+                if numero == valor:
+                    repetidos +=1
+            cont.append(repetidos)
+    if len(cont) == 2:
+        if (cont[0] == 2 and cont[1] == 3) or (cont[0] == 3 and cont[1] == 2):
+            for elem in dados:
+                soma += elem
+            return soma
+    return 0
+def calcula_pontos_quadra(dados):
+    checados =[]
+    soma = 0
+    for valor in dados:
+        if valor not in checados:
+            checados.append(valor)
+            repetidos = 0
+            for numero in dados:
+                if numero == valor:
+                    repetidos +=1
+            if repetidos >= 4:
+                for elem in dados:
+                    soma += elem
+                return soma
+    return 0
+def calcula_pontos_quina(dados):
+    checados =[]
+    for valor in dados:
+        if valor not in checados:
+            checados.append(valor)
+            repetidos = 0
+            for numero in dados:
+                if numero == valor:
+                    repetidos +=1
+            if repetidos >= 5:
+                return 50
+    return 0
+def calcula_pontos_regra_avancada(dados):
+    dicionario = {}
+    regrasavancadas = ["cinco_iguais", "full_house", "quadra", "sem_combinacao", "sequencia_alta", "sequencia_baixa" ]
+    resultados = [calcula_pontos_quina(dados), calcula_pontos_full_house(dados), calcula_pontos_quadra(dados), calcula_pontos_soma(dados), calcula_pontos_sequencia_alta(dados), calcula_pontos_sequencia_baixa(dados)]
+    for i in range (len(regrasavancadas)):
+        dicionario[regrasavancadas[i]] = resultados[i]
+    return dicionario
+#kikku acabei de gabaritar de first esse de cima ai, pica demais
