@@ -45,26 +45,26 @@ def calcula_pontos_regra_simples(dados):
     return dic
 
 
-def calcula_pontos_soma (lista):
+def calcula_pontos_soma (dados):
     soma = 0
-    for i in range (len(lista)):
-        soma+=lista[i]
+    for i in range (len(dados)):
+        soma+=dados[i]
     return soma
 
-def calcula_pontos_sequencia_baixa (lista):
-    if 1 in lista and 2 in lista and 3 in lista and 4 in lista:
+def calcula_pontos_sequencia_baixa (dados):
+    if 1 in dados and 2 in dados and 3 in dados and 4 in dados:
         return 15
-    elif 2 in lista and 3 in lista and 4 in lista and 5 in lista:
+    elif 2 in dados and 3 in dados and 4 in dados and 5 in dados:
         return 15
-    elif 3 in lista and 4 in lista and 5 in lista and 6 in lista:
+    elif 3 in dados and 4 in dados and 5 in dados and 6 in dados:
         return 15
     else:
         return 0
 
-def calcula_pontos_sequencia_alta (lista):
-    if 1 in lista and 2 in lista and 3 in lista and 4 in lista and 5 in lista:
+def calcula_pontos_sequencia_alta (dados):
+    if 1 in dados and 2 in dados and 3 in dados and 4 in dados and 5 in dados:
         return 30
-    elif 2 in lista and 3 in lista and 4 in lista and 5 in lista and 6 in lista:
+    elif 2 in dados and 3 in dados and 4 in dados and 5 in dados and 6 in dados:
         return 30
     else:
         return 0
@@ -132,3 +132,20 @@ def faz_jogada(dados, categoria, dicionario):
         pontuacaosimples = novovalor[int(categoria)]
         dicionario["regra_simples"][int(categoria)] = pontuacaosimples
     return dicionario
+def imprime_cartela(cartela):
+    print("Cartela de Pontos:")
+    print("-"*25)    
+    for i in range(1, 7):
+        filler = " " * (15 - len(str(i)))
+        if cartela['regra_simples'][i] != -1:
+            print(f"| {i}: {filler}| {cartela['regra_simples'][i]:02} |")
+        else:
+            print(f"| {i}: {filler}|    |")
+    for i in cartela['regra_avancada'].keys():
+        filler = " " * (15 - len(str(i)))
+        if cartela['regra_avancada'][i] != -1:
+            print(f"| {i}: {filler}| {cartela['regra_avancada'][i]:02} |")
+        else:
+            print(f"| {i}: {filler}|    |")
+    print("-"*25)
+
